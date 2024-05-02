@@ -1,6 +1,6 @@
 <template>
     <div>
-<h1>lsjkdnwdsvjc</h1>
+<Navbar></Navbar>
     </div>
     <slot/>
 </template>
