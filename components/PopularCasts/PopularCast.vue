@@ -1,5 +1,6 @@
 <template>
   <div class="parent mt-6 bg-black relative ">
+    <div class=" text-right pr-5 pb-5 text-yellow-500 font-bold">بازیگران معروف</div>
     <div class="carousel overflow-x-hidden h-44 pt-2    " @mouseleave="up" :style="{userSelect:userSelect, scrollBehavior: scrollBehavior}" @mousedown="down"  @mouseup="up" @mousemove="move" ref="carousel">
      <div class="cards     " >
       
