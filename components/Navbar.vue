@@ -18,7 +18,7 @@
             </div>
         </div>
         <div class=" flex h-9 w-64 justify-between items-center">
-            <div class=" text-white font-bold text-xl">خانه</div>
+            <div class=" text-white font-bold text-xl">{{ metaHeader }}</div>
             <div><img src="../assets/photos/logo.png" class=" w-32 " alt=""></div>
         </div>
     </div>
@@ -26,7 +26,8 @@
 </template>
 
 <script setup>
-
+import { useTitle} from '@vueuse/core'
+const metaHeader=useTitle()
 </script>
 
 <style scoped>
