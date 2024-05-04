@@ -1,5 +1,5 @@
 <template>
-    <div class="container flex justify-between bg-black p-2">
+    <div class="container flex justify-between bg-black p-2 ">
         <div class=" flex nav-left-end ">
             <div class="signin-singup w-32 flex justify-between ">
             <button class=" bg-black border-yellow-500 rounded text-yellow-500 border-2 w-14 h-9 font-normal">ورود</button>
@@ -36,5 +36,7 @@ const metaHeader=useTitle()
     justify-content: space-between;
 
 }
-
+.container{
+    width: 100%;
+}
 </style>
