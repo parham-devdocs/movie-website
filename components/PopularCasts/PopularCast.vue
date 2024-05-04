@@ -1,6 +1,9 @@
 <template>
   <div class="parent mt-6 bg-black relative ">
+    <div class=" flex items-center justify-between">
+      <nuxt-link to="#"><IconsListIcon class=" text-yellow-500"></IconsListIcon></nuxt-link>
     <div class=" text-right pr-5 pb-5 text-yellow-500 font-bold">بازیگران معروف</div>
+    </div>
     <div class="carousel overflow-x-hidden h-44 pt-2" @touchstart.prevent="down" @touchend.prevent="up" @mouseleave="up" :style="{userSelect:userSelect, scrollBehavior: scrollBehavior}" @mousedown.prevent="down"  @mouseup="up" @mousemove="move" ref="carousel">
      <div class="cards" >
       

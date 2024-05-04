@@ -1,11 +1,14 @@
 <template>
-    <div class="">
+    <div >
 <Navbar ></Navbar>
     </div>
-    <div class="grid grid-cols-10 overflow-x-hidden" >
-        <div class=" col-span-9"> <slot/> </div>
+    <div class="grid grid-cols-10" >
+        <div class=" col-span-8 "> <slot/> </div>
 
-        <div class=" sidebar ">slkcslcmsdlkmsd</div>
+        <div class=" sidebar col-span-2 ">
+            <SideBar></SideBar>
+
+        </div>
 
     </div>
     
@@ -17,9 +20,5 @@
 </script>
 
 <style  scoped>
-.sidebar{
-    width: 100%;
-    height: 100vh;
-    background-color: white;
-}
+
 </style>

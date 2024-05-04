@@ -1,6 +1,9 @@
 <template>
-  <div class="parent mt-6 bg-black relative ">
+  <div class="parent mt-6 bg-black relative">
+    <div class=" flex justify-between items-center">
+          <nuxt-link to="#"><IconsListIcon class=" text-yellow-500"></IconsListIcon></nuxt-link>
     <div class=" text-right pr-5 pb-5 text-yellow-500 font-bold">{{ title  }}</div>
+    </div>
     <div class="carousel overflow-x-hidden h-80 pt-2" @touchstart.prevent="down" @touchend.prevent="up"  @mouseleave="up" :style="{userSelect:userSelect, scrollBehavior: scrollBehavior}" @mousedown.prevent="down"  @mouseup.prevent="up" @mousemove.prevent="move" ref="carousel">
      <div class="cards" >
 
