@@ -1,10 +1,10 @@
 <template>
   <div class="parent mt-6 bg-black relative ">
     <div class=" text-right pr-5 pb-5 text-yellow-500 font-bold">بازیگران معروف</div>
-    <div class="carousel overflow-x-hidden h-44 pt-2    "  @mouseleave="up" :style="{userSelect:userSelect, scrollBehavior: scrollBehavior}" @mousedown="down"  @mouseup="up" @mousemove="move" ref="carousel">
-     <div class="cards     " >
+    <div class="carousel overflow-x-hidden h-44 pt-2" @touchstart.prevent="down" @touchend.prevent="up" @mouseleave="up" :style="{userSelect:userSelect, scrollBehavior: scrollBehavior}" @mousedown.prevent="down"  @mouseup="up" @mousemove="move" ref="carousel">
+     <div class="cards" >
       
-<PopularCastsPopularCastCard @mouseenter="enter" v-for="(item, index) in cast" :key="index" :src="item.src" :name="item.name"></PopularCastsPopularCastCard>
+<PopularCastsPopularCastCard  v-for="(item, index) in cast" :key="index" :src="item.src" :name="item.name"></PopularCastsPopularCastCard>
 </div> 
 <button @click="scrollLeft"  class="absolute prev text-yellow-500 text-3xl"><IconsPrevIcon></IconsPrevIcon></button>
 <button @click="scrollRight" class="  absolute next text-yellow-500 text-3xl"><IconsNextIcon></IconsNextIcon></button>
@@ -53,6 +53,11 @@ function down() {
   dragStart.value=true
   
 }
+
+function drop(e) {
+  console.log(e);
+  e.preventDefault()
+}
 function up() {
   dragStart.value=false
 }
@@ -75,6 +80,11 @@ if (dragStart.value) {
 </script>
 
 <style scoped>
+.parent{
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
 .cards{
   width: 5000px;
 
