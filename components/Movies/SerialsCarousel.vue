@@ -1,12 +1,12 @@
 <template>
     <div >
-<MoviesMovieCarousel :title="title" :movies="movies"></MoviesMovieCarousel>
+<MoviesMovieCarousel  :title="title" :movies="movies"></MoviesMovieCarousel>
 
     </div>
 </template>
 
 <script setup>
-const title=ref('ترسناک ')
+const title=ref(' سریال ها ')
 const movies = ref([
   {  rate:8.3 , dubbed: true,src: "/photos/serials/1.webp" },
   {  rate:7.2 , dubbed: true,src: "photos/serials/2.webp" },

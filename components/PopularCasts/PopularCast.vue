@@ -1,5 +1,5 @@
 <template>
-  <div class="parent mt-6 bg-black relative ">
+  <div class="parent mt-6 bg-black relative " :style="{backgroundColor:background}">
     <div class=" flex items-center justify-between">
       <nuxt-link to="#"><IconsListIcon class=" text-yellow-500"></IconsListIcon></nuxt-link>
     <div class=" text-right pr-5 pb-5 text-yellow-500 font-bold">بازیگران معروف</div>
@@ -7,7 +7,7 @@
     <div class="carousel overflow-x-hidden h-44 pt-2" @touchstart.prevent="down" @touchend.prevent="up" @mouseleave="up" :style="{userSelect:userSelect, scrollBehavior: scrollBehavior}" @mousedown.prevent="down"  @mouseup="up" @mousemove="move" ref="carousel">
      <div class="cards" >
       
-<PopularCastsPopularCastCard  v-for="(item, index) in cast" :key="index" :src="item.src" :name="item.name"></PopularCastsPopularCastCard>
+<PopularCastsPopularCastCard class=" ml-8"  v-for="(item, index) in cast" :key="index" :src="item.src" :name="item.name"></PopularCastsPopularCastCard>
 </div> 
 <button @click="scrollLeft"  class="absolute prev text-yellow-500 text-3xl"><IconsPrevIcon></IconsPrevIcon></button>
 <button @click="scrollRight" class="  absolute next text-yellow-500 text-3xl"><IconsNextIcon></IconsNextIcon></button>
@@ -20,7 +20,16 @@
 
 <script setup>
 
-  import {ref } from "vue";
+import { ref } from "vue";
+import { darkmode_lightmode_handler } from '~/store/mode';
+const background=ref('white')
+
+const colorMode = darkmode_lightmode_handler()
+
+watch(colorMode, () => {
+    background.value = colorMode.backgoundColor
+    
+})
 const cast = ref([
   { name: 'Yoo-in-soo', src: "/photos/popularCast/1.jpg" },
   { name: 'Wi-ha-jun', src: "/photos/popularCast/2.jpg" },
@@ -89,10 +98,10 @@ if (dragStart.value) {
   margin-right: auto;
 }
 .cards{
-  width: 5000px;
+  width:max-content;
 
 display: flex;
-   justify-content: space-evenly;
+   justify-content:space-between;
    align-items: center;
    
 }

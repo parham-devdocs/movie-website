@@ -1,6 +1,6 @@
 <template>
     <div>
-chanels
+hello
     </div>
 </template>
 
