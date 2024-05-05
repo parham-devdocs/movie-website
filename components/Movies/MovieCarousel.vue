@@ -1,6 +1,9 @@
 <template>
-  <div class="parent mt-6 bg-black relative ">
+  <div class="parent mt-6 rounded relative" :style="{backgroundColor:background}">
+    <div class=" flex justify-between items-center">
+          <nuxt-link to="#"><IconsListIcon class=" text-yellow-500"></IconsListIcon></nuxt-link>
     <div class=" text-right pr-5 pb-5 text-yellow-500 font-bold">{{ title  }}</div>
+    </div>
     <div class="carousel overflow-x-hidden h-80 pt-2" @touchstart.prevent="down" @touchend.prevent="up"  @mouseleave="up" :style="{userSelect:userSelect, scrollBehavior: scrollBehavior}" @mousedown.prevent="down"  @mouseup.prevent="up" @mousemove.prevent="move" ref="carousel">
      <div class="cards" >
 
@@ -29,8 +32,9 @@
 </template>
 
 <script setup>
-
-  import {ref } from "vue";
+import  { darkmode_lightmode_handler } from '~/store/mode';
+import { ref } from "vue";
+const backgound=ref('white')
 const props= defineProps({
   movies: Array,
   title:String
@@ -39,7 +43,16 @@ const props= defineProps({
   const carousel=ref(null)
 const products=ref(null)
 const userSelect=ref('auto')
-const scrollBehavior=ref('auto')
+const scrollBehavior = ref('auto')
+
+const background=ref('white')
+
+const colorMode = darkmode_lightmode_handler()
+
+watch(colorMode, () => {
+    background.value = colorMode.backgoundColor
+    
+})
 function down() {
   console.log('down');
   dragStart.value=true
