@@ -1,8 +1,9 @@
 <template>
-    <div class="container flex justify-between p-2 bg-black" >
+    <div class="wrapper"></div>
+    <div class="container flex justify-between w-full p-2 bg-black" >
         <div class=" flex nav-left-end ">
             <div class="signin-singup w-36 flex justify-between ">
-            <button  class=" bg-black  rounded border-yellow-500 text-yellow-500 border-2 w-14 h-9 font-normal">ورود</button>
+            <button @click="show_signin"  class=" bg-black  rounded border-yellow-500 text-yellow-500 border-2 w-14 h-9 font-normal">ورود</button>
             <button  class=" bg-black rounded  text-white font-normal w-20 h-9 ">ثبت نام</button>
             </div>
             <div class=" flex h-9  w-96 bg-black border-2 border-yellow-500 rounded">
@@ -17,7 +18,7 @@
                 </div>
             </div>
         </div>
-        <div class=" flex h-9 w-64 justify-between items-center">
+        <div class=" flex h-9 w-60 justify-between items-center">
             <div class=" text-white font-bold text-xl">{{ metaHeader }}</div>
             <div><img src="../assets/photos/logo.png" class=" w-32 " alt=""></div>
         </div>
@@ -27,14 +28,22 @@
 
 <script setup>
 
-const background=ref('black')
+const background = ref('black')
+import { ref } from 'vue'
 import { useTitle } from '@vueuse/core'
 import { darkmode_lightmode_handler } from '~/store/mode';
-
+import { showSignin } from "~/store/showSignin";
+const signIn_store = showSignin()
 watch(darkmode_lightmode_handler(), () => {
     background.value = darkmode_lightmode_handler().backgoundColor
     console.log(background.value);
 })
+
+function show_signin() {
+    signIn_store.showSignIn = true
+    signIn_store.hideSignin=false
+
+}
 const metaHeader=useTitle()
 </script>
 
