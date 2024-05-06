@@ -12,9 +12,14 @@
 </template>
 
 <script setup>
-import NewestMoviesCarousel from '~/components/Movies/NewestMoviesCarousel.vue';
+import { onMounted } from 'vue'
+import  { showSignin } from '~/store/showSignin';
 
+const hide=showSignin()
 
+onMounted(() => {
+    hide.hideSignin=true
+}),
 
 
 
