@@ -1,15 +1,15 @@
 <template>
-   <div class="wrapper"></div>
+   
     <div class=" relative ">
     <div  >
-<Navbar class="" ></Navbar>
-<!-- <div class=" bg-red-700 w-full h-20"></div> -->
+<Navbar  ></Navbar>
+
     </div>
+            <SignInTab class=" sigInTab " v-if="signin_value"></SignInTab>
 
     <div class=" main grid grid-cols-10 " :style="{backgroundColor:background}"  >
         <div class="  col-span-8  " :style="{backgroundColor:background}">
              <slot/>
-            <SignInTab class=" sigInTab " v-if="signin_value"></SignInTab>
             </div>
 
         <div class=" sidebar col-span-2   fixed">
@@ -73,8 +73,6 @@ body{
 }
 .sigInTab {
     position: absolute;
-    top: 200px;
-    right: 37%;
         animation: signin-appear 2s linear 0s 1  forwards;
         animation-timing-function: ease-out;
 
@@ -93,9 +91,10 @@ body{
     animation-timing-function: ease-in-out;
     z-index: 20;
     height: 100vh;
-    width: 100vw;
+    width: 99vw;
     background-color: rgb(0, 0, 0);
     position: absolute;
+    
 }
 @keyframes changeOpacity {
     from{opacity: 0;}

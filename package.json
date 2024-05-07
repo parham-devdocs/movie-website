@@ -10,7 +10,9 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxtjs/moment": "^1.6.1",
     "@pinia/nuxt": "^0.5.1",
+    "dayjs": "^1.11.11",
     "nuxt": "^3.11.2",
     "pinia": "^2.1.7",
     "swiper": "^11.1.1",
@@ -23,6 +25,7 @@
     "@vueuse/core": "^10.9.0",
     "@vueuse/nuxt": "^10.9.0",
     "autoprefixer": "^10.4.19",
+    "dayjs-nuxt": "^2.1.9",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.3"
   }
