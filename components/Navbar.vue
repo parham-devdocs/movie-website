@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper"></div>
+    <!-- <div class="wrapper"></div> -->
    
 <div class="   flex  bg-black p2 h-16 items-center justify-between  ">
 
@@ -13,7 +13,7 @@
 </button> 
 </div>
 <div class=" hidden sm:flex  w-28  justify-evenly">
-   <button class="btnIcon bg-black text-yellow-500 w-fit h-fit p-1 rounded flex justify-center items-center border-2 border-yellow-500"> ثبت نام</button>
+   <NuxtLink to="/register" class="btnIcon bg-black text-yellow-500 w-fit h-fit p-1 rounded flex justify-center items-center border-2 border-yellow-500"> ثبت نام</NuxtLink>
    <button class="btnIcon bg-black text-yellow-500 w-fit h-fit p-1 rounded flex justify-center items-center border-2 border-yellow-500 " @click="show_signin">ورود</button> 
 </div>
  <div class=" hidden sm:flex h-9  w-96 bg-black border-2 border-yellow-500 rounded">
@@ -23,7 +23,7 @@
                      placeholder="فیلم ها , نمایش نامه های تلویزیونی " 
                      class=" w-72 outline-none
                       bg-black text-white text-right pl-2">
-                   <IconsSearchIcons class=" search-icon text-white mt-1 ml-1"></IconsSearchIcons>
+                   <IconsSearchIcons class="  search-icon text-white mt-1 ml-1"></IconsSearchIcons>
 
                 </div>
             </div>
@@ -31,7 +31,7 @@
 
 <div class=" w-44 flex justify-evenly items-center mr-3">
     <img src="./logo.png" class=" w-32">
-   <button class="btnIcon bg-black text-yellow-500 w-10 h-10 rounded flex justify-center items-center border-2 border-yellow-500 "> <IconsMenuIcon ></IconsMenuIcon></button>
+   <button class="btnIcon sm:hidden bg-black text-yellow-500 w-10 h-10 rounded flex justify-center items-center border-2 border-yellow-500 "> <IconsMenuIcon ></IconsMenuIcon></button>
 </div>
 </div>
 </template>
@@ -51,7 +51,7 @@ watch(darkmode_lightmode_handler(), () => {
 
 function show_signin() {
     signIn_store.showSignIn = true
-    signIn_store.hideSignin=false
+    // signIn_store.hideSignin=false
 
 }
 const metaHeader=useTitle()

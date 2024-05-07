@@ -73,7 +73,7 @@ function changeMode() {
     
 }
 .sideBar{
-    height:93vh;
+    height:90vh;
     
 }
 </style>
